@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  headnode:
+    build: headnode/
+    command: python ./Headnode.py
+    ports:
+      - "5000:5000"
+    network_mode: host
+    volumes:
+      - ./headnode:/headnode
+  cliente:
+    build: cliente/
+    command: python ./Cliente.py
+    network_mode: host
+    volumes:
+      - ./cliente:/cliente
+    depends_on:
+      - headnode
+      - datanode
+  datanode:
+    build: datanode/
+    command: python ./Datanode.py
+    network_mode: host
+    volumes:
+      - ./datanode:/datanode
+    depends_on:
+      - headnode
