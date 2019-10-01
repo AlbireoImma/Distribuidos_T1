@@ -1,3 +1,0 @@
-Conexion aceptada del cliente: 172.24.0.3:57692
-Mensaje de 172.24.0.3:57692   Hola servidor
-El cliente 172.24.0.3:57692 se ha desconectado
