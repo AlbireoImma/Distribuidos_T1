@@ -2,17 +2,17 @@ version: "3"
 
 services:
   server:
-    build: server/
-    command: python3 server.py
+    build: servidor/
+    command: python3 servidor.py
     ports:
       - "5000:5000"
     volumes:
-      - ./server:/server/
+      - ./servidor:/servidor/
 
   client:
-    build: client/
-    command: python3 client.py
+    build: cliente/
+    command: python3 cliente.py
     volumes:
-      - ./client:/client/
+      - ./cliente:/cliente/
     depends_on:
       - server
