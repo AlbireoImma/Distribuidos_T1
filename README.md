@@ -23,4 +23,4 @@ Para iniciar el cliente hacemos:
 - El directorio de los archivos del server esta en ./headnode
 - El directorio de los archivos del cliente esta en ./cliente
 - El directorio de los archivos de los datanodes esta en ./datanode
-- Podemos usar docker-compose up, pero nos falta una shell interactiva con la cual el cliente envie mensajes por lo cual es mas simple levantar los servicios uno a uno
+- Podemos usar docker-compose up, pero nos falta una shell interactiva con la cual el cliente envie mensajes por lo cual es mas simple levantar los servicios uno a uno (la cantidad de datanodes los informamos de la opcion --scale datanodes=3)
