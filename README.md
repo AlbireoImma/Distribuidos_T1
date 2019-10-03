@@ -19,7 +19,7 @@ Para iniciar el cliente hacemos:
 
 Para levantar la arquitectura completa hacemos (nos solicitan 3 datanodes):
 
-> docker-compose up --scale datanodes=3
+> docker-compose up --scale datanode=3
 
 - Si los comandos no funcionan, el problema puede ser de permisos, usar sudo o su segun corresponda
 - El funcionamiento debe seguir el orden (headnode -> datanode [las veces necesarias] -> cliente) ya que los sockets de cada servicio utilizan el de los anteriores) o bien levantar la estructura completa con docker-compose up
