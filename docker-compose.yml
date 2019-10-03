@@ -2,6 +2,9 @@ version: "3"
 
 services:
   headnode:
+    container_name: Headnode
+    stdin_open: true
+    tty: true
     build: headnode/
     command: python ./Headnode.py
     ports:
@@ -10,8 +13,11 @@ services:
     volumes:
       - ./headnode:/headnode
   cliente:
+    container_name: Cliente
+    stdin_open: true
+    tty: true
     build: cliente/
-    command: python ./Cliente.py
+    command: python ./Dummy.py
     network_mode: host
     volumes:
       - ./cliente:/cliente
