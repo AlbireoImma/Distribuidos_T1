@@ -88,7 +88,7 @@ class HiloCliente(threading.Thread):
     def __init__(self,IP_Cliente,Socket_Cliente):
         threading.Thread.__init__(self)
         self.SocketCliente = Socket_Cliente
-        print("Nueva conexión :", IP_Cliente)
+        self.IP_Cliente = IP_Cliente
 
     def run(self):
         """
@@ -99,8 +99,10 @@ class HiloCliente(threading.Thread):
         datos = self.SocketCliente.recv(2048)
         entrada = datos.decode()
         if entrada == "Cliente":
+            print("Nueva conexión cliente :", IP_Cliente)
             Rutina_Cliente(self.SocketCliente,IP_Cliente)
         elif entrada == "Datanode":
+            print("Nueva conexión datanode :", IP_Cliente)
             DATANODES.append(self.SocketCliente)
             Rutina_Datanode(self.SocketCliente,len(DATANODES))
 
